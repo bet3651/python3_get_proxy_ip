@@ -22,7 +22,7 @@ for proxy in proxys:
         proxy_support = urllib.request.ProxyHandler({'sock5': proxy})
         opener = urllib.request.build_opener(proxy_support)
         urllib.request.install_opener(opener)
-        response = urllib.request.urlopen("https://www.baidu.com/").read().decode("utf8")
+        response = urllib.request.urlopen(url).read().decode("utf8")
         valid_ip = proxy['http'][7:]
         print ('valid_ip: ' + valid_ip)
         ouf.write(valid_ip)
