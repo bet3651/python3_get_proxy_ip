@@ -19,7 +19,7 @@ ouf = open("valid_ip.txt", "a+")
 
 for proxy in proxys:
     try:
-        proxy_support = urllib.request.ProxyHandler({'sock5': proxy})
+        proxy_support = urllib.request.ProxyHandler(proxy)
         opener = urllib.request.build_opener(proxy_support)
         urllib.request.install_opener(opener)
         response = urllib.request.urlopen(url).read().decode("utf8")
